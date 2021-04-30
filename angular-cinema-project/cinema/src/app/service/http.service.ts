@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class HttpService {
 
-  BASE_URL = 'https://testserver/ildike0512/movies';
+  BASE_URL = 'https://tr360-frontend-exam-april.azurewebsites.net/ildike0512/movies';
 
   list$: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>([]);
 
@@ -28,7 +28,7 @@ export class HttpService {
   }
 
   deleteMovie(id):any {
-    this.http.delete(`${this.BASE_URL}/${movie.id}`).subscribe(
+    this.http.delete(`${this.BASE_URL}/${id}`).subscribe(
       () => this.getAll());
   }
 }
